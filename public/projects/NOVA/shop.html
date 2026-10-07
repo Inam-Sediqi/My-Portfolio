@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Shop | NOVA</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NOVA — Modern essentials designed for everyday."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="NOVA.html">NO<span>V</span>A</a>
+        <nav class="main-nav">
+          <a class="" href="NOVA.html">Home</a
+          ><a class="active" href="shop.html">Shop</a
+          ><a class="" href="NOVA.html#categories">Categories</a
+          ><a class="" href="about.html">About</a
+          ><a class="" href="contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a class="header-icon" href="shop.html" aria-label="Search"
+            ><i class="bi bi-search"></i></a
+          ><a
+            class="header-icon wishlist-link"
+            href="wishlist.html"
+            aria-label="Wishlist"
+            ><i class="bi bi-heart"></i
+            ><span class="count-badge wishlist-count">0</span></a
+          ><a class="header-icon" href="cart.html" aria-label="Cart"
+            ><i class="bi bi-bag"></i
+            ><span class="count-badge cart-count">0</span></a
+          ><button class="menu-toggle" data-menu aria-label="Open navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <div class="breadcrumb">
+            <a href="NOVA.html">Home</a><span>/</span><span>Shop</span>
+          </div>
+          <h1>Shop NOVA.</h1>
+          <p>
+            Explore modern essentials across clothing, footwear, accessories and
+            bags.
+          </p>
+        </div>
+      </section>
+      <section class="container shop-layout">
+        <aside class="filters">
+          <div class="filter-group">
+            <h3>Search</h3>
+            <div class="search-box">
+              <i class="bi bi-search"></i
+              ><input
+                id="shop-search"
+                placeholder="Search products..."
+                aria-label="Search products"
+              />
+            </div>
+          </div>
+          <div class="filter-group">
+            <h3>Category</h3>
+            <select class="select" id="category-filter" style="width: 100%">
+              <option>All</option>
+              <option>Clothing</option>
+              <option>Shoes</option>
+              <option>Accessories</option>
+              <option>Bags</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <h3>Price</h3>
+            <label
+              >Min <span>$<output id="min-price-output">0</output></span></label
+            ><input
+              id="min-price"
+              type="range"
+              min="0"
+              max="200"
+              value="0"
+            /><label
+              >Max
+              <span>$<output id="max-price-output">200</output></span></label
+            ><input id="max-price" type="range" min="0" max="200" value="200" />
+          </div>
+          <div class="filter-group">
+            <h3>Minimum rating</h3>
+            <select class="select" id="rating-filter" style="width: 100%">
+              <option value="0">Any rating</option>
+              <option value="4">4+ stars</option>
+              <option value="4.5">4.5+ stars</option>
+              <option value="4.8">4.8+ stars</option>
+            </select>
+          </div>
+          <button
+            class="btn btn-outline"
+            id="clear-filters"
+            style="width: 100%"
+          >
+            Reset filters
+          </button>
+        </aside>
+        <div>
+          <div class="shop-topbar">
+            <strong id="product-count"></strong>
+            <div class="shop-tools">
+              <select class="select" id="sort-products">
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Rating</option>
+                <option value="newest">Newest</option>
+              </select>
+              <div class="view-toggle">
+                <button id="grid-view" class="active" aria-label="Grid view">
+                  <i class="bi bi-grid"></i></button
+                ><button id="list-view" aria-label="List view">
+                  <i class="bi bi-list"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="product-grid" id="shop-grid"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="logo" href="NOVA.html">NO<span>V</span>A</a>
+            <p>
+              Modern essentials. Designed for everyday. Thoughtful pieces, clean
+              silhouettes and an effortless point of view.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h3>Shop</h3>
+            <a href="">Clothing</a
+            ><a href="shop.html?category=Shoes">Shoes</a
+            ><a href="shop.html?category=Accessories">Accessories</a
+            ><a href="shop.html?category=Bags">Bags</a>
+          </div>
+          <div class="footer-col">
+            <h3>Support</h3>
+            <a href="contact.html">Contact</a><a href="about.html">About NOVA</a
+            ><a href="cart.html">Cart</a><a href="wishlist.html">Wishlist</a>
+          </div>
+          <div class="footer-col">
+            <h3>Follow</h3>
+            <a href="#">Instagram</a><a href="#">Pinterest</a
+            ><a href="#">Facebook</a><a href="#">TikTok</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 NOVA. Portfolio project.</span
+          ><span>Modern essentials. Designed for everyday.</span>
+        </div>
+      </div>
+    </footer>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/shop.js"></script>
+  </body>
+</html>

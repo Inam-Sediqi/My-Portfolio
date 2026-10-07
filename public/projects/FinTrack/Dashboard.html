@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FinTrack — a modern personal expense tracker and finance dashboard.">
+  <title>FinTrack — Personal Finance Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+      <div class="sidebar-top">
+        <a class="brand" href="#" aria-label="FinTrack home">
+          <span class="brand-mark"><i class="bi bi-wallet2"></i></span>
+          <span>Fin<span>Track</span></span>
+        </a>
+        <button class="icon-btn mobile-close" id="closeSidebar" aria-label="Close navigation">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <nav class="nav-list">
+        <a href="#dashboard" class="nav-link active"><i class="bi bi-grid-1x2-fill"></i><span>Overview</span></a>
+        <a href="#transactions" class="nav-link"><i class="bi bi-arrow-left-right"></i><span>Transactions</span></a>
+        <a href="#analytics" class="nav-link"><i class="bi bi-bar-chart-line"></i><span>Analytics</span></a>
+      </nav>
+
+      <div class="sidebar-section">
+        <p class="sidebar-label">Manage</p>
+        <button class="side-action" id="sidebarAdd"><i class="bi bi-plus-circle"></i><span>New transaction</span></button>
+        <button class="side-action" id="sidebarExport"><i class="bi bi-download"></i><span>Export data</span></button>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="tip-card">
+          <div class="tip-icon"><i class="bi bi-lightbulb"></i></div>
+          <div>
+            <strong>Build better habits</strong>
+            <p>Review your spending categories regularly.</p>
+          </div>
+        </div>
+        <div class="sidebar-user">
+          <div class="avatar">IS</div>
+          <div>
+            <strong>Inam S.</strong>
+            <span>Personal account</span>
+          </div>
+          <i class="bi bi-three-dots"></i>
+        </div>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main-content" id="dashboard">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn mobile-menu" id="openSidebar" aria-label="Open navigation">
+            <i class="bi bi-list"></i>
+          </button>
+          <div>
+            <p class="eyebrow">PERSONAL FINANCE</p>
+            <h1>Good morning, Inam.</h1>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-btn" id="themeToggle" aria-label="Switch theme" title="Switch theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+          <button class="notification-btn" aria-label="Notifications">
+            <i class="bi bi-bell"></i><span></span>
+          </button>
+          <div class="top-profile">
+            <div class="avatar">IS</div>
+            <div class="profile-copy">
+              <strong>Inam Sediqi</strong>
+              <span>Personal</span>
+            </div>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <section class="page-content">
+        <div class="welcome-row">
+          <div>
+            <h2>Financial overview</h2>
+            <p>Keep track of where your money goes and make informed decisions.</p>
+          </div>
+          <button class="primary-btn" id="addTransactionBtn"><i class="bi bi-plus-lg"></i> Add transaction</button>
+        </div>
+
+        <section class="summary-grid" aria-label="Financial summary">
+          <article class="summary-card balance-card">
+            <div class="summary-top">
+              <div class="summary-icon"><i class="bi bi-wallet2"></i></div>
+              <span class="stat-badge neutral" id="balanceBadge">Current</span>
+            </div>
+            <p>Total balance</p>
+            <h3 id="balanceValue">$0.00</h3>
+            <div class="mini-stat"><i class="bi bi-arrow-up-right"></i><span>Available after expenses</span></div>
+          </article>
+
+          <article class="summary-card income-card">
+            <div class="summary-top">
+              <div class="summary-icon"><i class="bi bi-arrow-down-left"></i></div>
+              <span class="stat-badge positive" id="incomeBadge">Income</span>
+            </div>
+            <p>Total income</p>
+            <h3 id="incomeValue">$0.00</h3>
+            <div class="mini-stat"><i class="bi bi-graph-up-arrow"></i><span id="incomeMeta">Across all income</span></div>
+          </article>
+
+          <article class="summary-card expense-card">
+            <div class="summary-top">
+              <div class="summary-icon"><i class="bi bi-arrow-up-right"></i></div>
+              <span class="stat-badge negative" id="expenseBadge">Expenses</span>
+            </div>
+            <p>Total expenses</p>
+            <h3 id="expenseValue">$0.00</h3>
+            <div class="mini-stat"><i class="bi bi-graph-down-arrow"></i><span id="expenseMeta">Across all spending</span></div>
+          </article>
+
+          <article class="summary-card savings-card">
+            <div class="summary-top">
+              <div class="summary-icon"><i class="bi bi-piggy-bank"></i></div>
+              <span class="stat-badge positive" id="savingsBadge">Savings</span>
+            </div>
+            <p>Savings rate</p>
+            <h3 id="savingsValue">0%</h3>
+            <div class="mini-stat"><i class="bi bi-shield-check"></i><span id="savingsMeta">Income kept after expenses</span></div>
+          </article>
+        </section>
+
+        <section class="analytics-grid" id="analytics">
+          <article class="panel expense-chart-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">ANALYTICS</p>
+                <h3>Expense overview</h3>
+              </div>
+              <select id="chartPeriod" class="select-control" aria-label="Chart period">
+                <option value="all">All time</option>
+                <option value="month">This month</option>
+              </select>
+            </div>
+            <div class="chart-area">
+              <div class="donut-wrap">
+                <div class="donut-chart" id="donutChart">
+                  <div class="donut-center"><strong id="donutTotal">$0</strong><span>expenses</span></div>
+                </div>
+              </div>
+              <div class="legend-list" id="categoryLegend"></div>
+            </div>
+          </article>
+
+          <article class="panel trend-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">CASH FLOW</p>
+                <h3>Income vs expenses</h3>
+              </div>
+              <span class="period-label" id="trendPeriod">Last 7 days</span>
+            </div>
+            <div class="trend-chart" id="trendChart" aria-label="Income and expense trend"></div>
+            <div class="chart-key">
+              <span><i class="key-dot income"></i>Income</span>
+              <span><i class="key-dot expense"></i>Expenses</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="content-grid" id="transactions">
+          <article class="panel transactions-panel">
+            <div class="panel-heading transactions-heading">
+              <div>
+                <p class="eyebrow">ACTIVITY</p>
+                <h3>Recent transactions</h3>
+              </div>
+              <div class="heading-actions">
+                <span class="transaction-count" id="transactionCount">0 transactions</span>
+                <button class="danger-btn" id="clearAllBtn" type="button" title="Clear all transaction data">
+                  <i class="bi bi-trash3"></i> Clear all
+                </button>
+              </div>
+            </div>
+
+            <div class="toolbar">
+              <label class="search-box">
+                <i class="bi bi-search"></i>
+                <input id="searchInput" type="search" placeholder="Search transactions..." aria-label="Search transactions">
+              </label>
+              <select id="typeFilter" class="select-control" aria-label="Filter by type">
+                <option value="all">All types</option>
+                <option value="income">Income</option>
+                <option value="expense">Expenses</option>
+              </select>
+              <select id="categoryFilter" class="select-control" aria-label="Filter by category">
+                <option value="all">All categories</option>
+              </select>
+              <select id="sortSelect" class="select-control" aria-label="Sort transactions">
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+                <option value="highest">Highest amount</option>
+                <option value="lowest">Lowest amount</option>
+                <option value="az">Name A–Z</option>
+              </select>
+            </div>
+
+            <div class="table-wrap">
+              <table class="transactions-table">
+                <thead>
+                  <tr>
+                    <th>Transaction</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th><span class="sr-only">Actions</span></th>
+                  </tr>
+                </thead>
+                <tbody id="transactionList"></tbody>
+              </table>
+              <div class="empty-state hidden" id="emptyState">
+                <div class="empty-icon"><i class="bi bi-receipt"></i></div>
+                <h4>No transactions found</h4>
+                <p>Try changing your filters or add your first transaction.</p>
+                <button class="secondary-btn" id="emptyAddBtn"><i class="bi bi-plus-lg"></i> Add transaction</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel spending-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">BREAKDOWN</p>
+                <h3>Spending by category</h3>
+              </div>
+              <button class="text-btn" id="clearFiltersBtn">Reset</button>
+            </div>
+            <div class="spending-list" id="spendingList"></div>
+          </article>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <section class="transaction-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">TRANSACTION</p>
+          <h2 id="modalTitle">Add transaction</h2>
+        </div>
+        <button class="icon-btn" id="closeModal" aria-label="Close dialog"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <form id="transactionForm" novalidate>
+        <div class="type-switch" role="group" aria-label="Transaction type">
+          <button type="button" class="type-option active" data-type="expense"><i class="bi bi-arrow-up-right"></i> Expense</button>
+          <button type="button" class="type-option" data-type="income"><i class="bi bi-arrow-down-left"></i> Income</button>
+        </div>
+        <input type="hidden" id="transactionType" value="expense">
+
+        <div class="form-grid">
+          <div class="field field-full">
+            <label for="description">Description</label>
+            <div class="input-wrap"><i class="bi bi-pencil"></i><input id="description" name="description" type="text" placeholder="e.g. Grocery shopping" autocomplete="off" required></div>
+            <small class="field-error" id="descriptionError"></small>
+          </div>
+
+          <div class="field">
+            <label for="amount">Amount</label>
+            <div class="input-wrap"><span class="currency-symbol">$</span><input id="amount" name="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required></div>
+            <small class="field-error" id="amountError"></small>
+          </div>
+
+          <div class="field">
+            <label for="transactionDate">Date</label>
+            <div class="input-wrap"><i class="bi bi-calendar3"></i><input id="transactionDate" name="date" type="date" required></div>
+            <small class="field-error" id="dateError"></small>
+          </div>
+
+          <div class="field field-full">
+            <label for="category">Category</label>
+            <div class="input-wrap"><i class="bi bi-tag"></i>
+              <select id="category" name="category" required></select>
+            </div>
+            <small class="field-error" id="categoryError"></small>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="secondary-btn" id="cancelModal">Cancel</button>
+          <button type="submit" class="primary-btn"><i class="bi bi-check2"></i> <span id="saveButtonText">Save transaction</span></button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

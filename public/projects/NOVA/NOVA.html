@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Modern Essentials | NOVA</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NOVA — Modern essentials designed for everyday."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="NOVA.html">NO<span>V</span>A</a>
+        <nav class="main-nav">
+          <a class="active" href="NOVA.html">Home</a
+          ><a class="" href="shop.html">Shop</a
+          ><a class="" href="NOVA.html#categories">Categories</a
+          ><a class="" href="about.html">About</a
+          ><a class="" href="contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a class="header-icon" href="shop.html" aria-label="Search"
+            ><i class="bi bi-search"></i></a
+          ><a
+            class="header-icon wishlist-link"
+            href="wishlist.html"
+            aria-label="Wishlist"
+            ><i class="bi bi-heart"></i
+            ><span class="count-badge wishlist-count">0</span></a
+          ><a class="header-icon" href="cart.html" aria-label="Cart"
+            ><i class="bi bi-bag"></i
+            ><span class="count-badge cart-count">0</span></a
+          ><button class="menu-toggle" data-menu aria-label="Open navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <img
+          class="hero-image"
+          src="assets/images/hero.nova.jpg"
+          alt="NOVA fashion collection"
+        />
+        <div class="container hero-content">
+          <span class="eyebrow">NOVA / AUTUMN EDIT</span>
+          <h1>Modern essentials for your everyday.</h1>
+          <p>
+            Refined wardrobe staples and lifestyle pieces designed around clean
+            lines, comfort and effortless versatility.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="shop.html"
+              >Shop Now <i class="bi bi-arrow-up-right"></i></a
+            ><a
+              class="btn btn-outline"
+              style="color: #fff; border-color: #ffffff80"
+              href="#categories"
+              >Explore Collection</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="section" id="categories">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Shop by category</span>
+              <h2>Built for your everyday.</h2>
+            </div>
+            <p>
+              From essential layers to considered accessories, discover pieces
+              designed to work together.
+            </p>
+          </div>
+          <div class="category-grid">
+            <div class="category-card">
+              <img
+                src="assets/images/nova1.jpg"
+                alt="Clothing"
+              />
+              <div class="category-copy">
+                <h3>Clothing</h3>
+                <a href="shop.html?category=Clothing">View Collection →</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <img
+                src="assets/images/nova7.jpg"
+                alt="Shoes"
+              />
+              <div class="category-copy">
+                <h3>Shoes</h3>
+                <a href="shop.html?category=Shoes">View Collection →</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <img
+                src="assets/images/nova16.jpg"
+                alt="Accessories"
+              />
+              <div class="category-copy">
+                <h3>Accessories</h3>
+                <a href="shop.html?category=Accessories">View Collection →</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <img
+                src="assets/images/nova10.jpg"
+                alt="Bags"
+              />
+              <div class="category-copy">
+                <h3>Bags</h3>
+                <a href="shop.html?category=Bags">View Collection →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding-top: 15px">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">NOVA selection</span>
+              <h2>Featured pieces.</h2>
+            </div>
+            <a class="btn btn-outline" href="shop.html"
+              >View all products <i class="bi bi-arrow-right"></i
+            ></a>
+          </div>
+          <div class="product-grid" id="featured-grid"></div>
+        </div>
+      </section>
+      <section class="promo">
+        <div class="container promo-inner">
+          <div>
+            <span class="eyebrow">Limited seasonal offer</span>
+            <h2>New Season — Up to 30% Off</h2>
+            <p>
+              Refresh your everyday rotation with considered essentials selected
+              for the new season.
+            </p>
+          </div>
+          <a class="btn btn-light" href="shop.html"
+            >Shop the edit <i class="bi bi-arrow-right"></i
+          ></a>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">The NOVA standard</span>
+              <h2>Why choose NOVA?</h2>
+            </div>
+          </div>
+          <div class="feature-grid">
+            <div class="feature">
+              <i class="bi bi-truck"></i>
+              <h3>Free Shipping</h3>
+              <p>Complimentary standard delivery on orders over $100.</p>
+            </div>
+            <div class="feature">
+              <i class="bi bi-shield-check"></i>
+              <h3>Secure Checkout</h3>
+              <p>
+                A clean frontend checkout experience built with security in
+                mind.
+              </p>
+            </div>
+            <div class="feature">
+              <i class="bi bi-arrow-repeat"></i>
+              <h3>Easy Returns</h3>
+              <p>Simple 30-day returns on eligible unworn items.</p>
+            </div>
+            <div class="feature">
+              <i class="bi bi-gem"></i>
+              <h3>Quality Products</h3>
+              <p>Thoughtful materials, practical design and timeless appeal.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="newsletter">
+        <div class="container newsletter-inner">
+          <div>
+            <span class="eyebrow">Stay in the loop</span>
+            <h2>Notes from NOVA.</h2>
+            <p>
+              New arrivals, seasonal edits and occasional member-only offers. No
+              noise.
+            </p>
+          </div>
+          <form class="newsletter-form" id="newsletter-form">
+            <input
+              class="field"
+              id="newsletter-email"
+              type="email"
+              placeholder="Your email address"
+              required
+            /><button class="btn btn-dark">Subscribe</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="logo" href="NOVA.html">NO<span>V</span>A</a>
+            <p>
+              Modern essentials. Designed for everyday. Thoughtful pieces, clean
+              silhouettes and an effortless point of view.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h3>Shop</h3>
+            <a href="shop.html?category=Clothing">Clothing</a
+            ><a href="shop.html?category=Shoes">Shoes</a
+            ><a href="shop.html?category=Accessories">Accessories</a
+            ><a href="shop.html?category=Bags">Bags</a>
+          </div>
+          <div class="footer-col">
+            <h3>Support</h3>
+            <a href="contact.html">Contact</a><a href="about.html">About NOVA</a
+            ><a href="cart.html">Cart</a><a href="wishlist.html">Wishlist</a>
+          </div>
+          <div class="footer-col">
+            <h3>Follow</h3>
+            <a href="#">Instagram</a><a href="#">Pinterest</a
+            ><a href="#">Facebook</a><a href="#">TikTok</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 NOVA. Portfolio project.</span
+          ><span>Modern essentials. Designed for everyday.</span>
+        </div>
+      </div>
+    </footer>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () =>
+        render(
+          products.filter((p) => p.featured).slice(0, 8),
+          document.querySelector("#featured-grid"),
+        ),
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Wishlist | NOVA</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NOVA — Modern essentials designed for everyday."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="NOVA.html">NO<span>V</span>A</a>
+        <nav class="main-nav">
+          <a class="" href="NOVA.html">Home</a
+          ><a class="" href="shop.html">Shop</a
+          ><a class="" href="NOVA.html#categories">Categories</a
+          ><a class="" href="about.html">About</a
+          ><a class="" href="contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a class="header-icon" href="shop.html" aria-label="Search"
+            ><i class="bi bi-search"></i></a
+          ><a
+            class="header-icon wishlist-link"
+            href="wishlist.html"
+            aria-label="Wishlist"
+            ><i class="bi bi-heart"></i
+            ><span class="count-badge wishlist-count">0</span></a
+          ><a class="header-icon" href="cart.html" aria-label="Cart"
+            ><i class="bi bi-bag"></i
+            ><span class="count-badge cart-count">0</span></a
+          ><button class="menu-toggle" data-menu aria-label="Open navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <div class="breadcrumb">
+            <a href="NOVA.html">Home</a><span>/</span><span>Wishlist</span>
+          </div>
+          <h1>Your wishlist.</h1>
+          <p>Save pieces you love and come back to them later.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div id="wishlist-grid" class="product-grid"></div>
+          <div id="wishlist-empty" class="empty-state hidden">
+            <div class="empty-icon"><i class="bi bi-heart"></i></div>
+            <h3>Your wishlist is empty</h3>
+            <p>Tap the heart on any product to save it here.</p>
+            <a class="btn btn-dark" href="shop.html">Explore products</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="logo" href="NOVA.html">NO<span>V</span>A</a>
+            <p>
+              Modern essentials. Designed for everyday. Thoughtful pieces, clean
+              silhouettes and an effortless point of view.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h3>Shop</h3>
+            <a href="shop.html?category=Clothing">Clothing</a
+            ><a href="shop.html?category=Shoes">Shoes</a
+            ><a href="shop.html?category=Accessories">Accessories</a
+            ><a href="shop.html?category=Bags">Bags</a>
+          </div>
+          <div class="footer-col">
+            <h3>Support</h3>
+            <a href="contact.html">Contact</a><a href="about.html">About NOVA</a
+            ><a href="cart.html">Cart</a><a href="wishlist.html">Wishlist</a>
+          </div>
+          <div class="footer-col">
+            <h3>Follow</h3>
+            <a href="#">Instagram</a><a href="#">Pinterest</a
+            ><a href="#">Facebook</a><a href="#">TikTok</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 NOVA. Portfolio project.</span
+          ><span>Modern essentials. Designed for everyday.</span>
+        </div>
+      </div>
+    </footer>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wishlist.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1546 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Sunshine Hotel - Luxury accommodation, unforgettable experiences and world-class hospitality."
+    />
+
+    <title>Sunshine Hotel | Luxury & Comfort</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="SunShine.css" />
+  </head>
+
+  <body>
+    <!-- ================= PRELOADER ================= -->
+
+    <div class="preloader">
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <p>Sunshine Hotel</p>
+    </div>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header" id="header">
+      <div class="container nav-container">
+        <a href="#home" class="logo">
+          <span class="logo-sun">
+            <i class="fa-solid fa-sun"></i>
+          </span>
+
+          <span>
+            SUNSHINE
+            <small>HOTEL & RESORT</small>
+          </span>
+        </a>
+
+        <nav class="navbar" id="navbar">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#rooms" class="nav-link">Rooms</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="#restaurant" class="nav-link">Restaurant</a>
+          <a href="#contact" class="nav-link">Contact</a>
+
+          <button class="nav-book-btn open-booking">Book Now</button>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+          <div class="hero-small-title reveal">WELCOME TO SUNSHINE HOTEL</div>
+
+          <h1 class="reveal">
+            Where Every Stay
+            <span>Feels Like Paradise</span>
+          </h1>
+
+          <p class="hero-description reveal">
+            Experience exceptional hospitality, breathtaking views, elegant
+            rooms and unforgettable moments in a place designed around you.
+          </p>
+
+          <div class="hero-buttons reveal">
+            <button class="btn btn-primary open-booking">
+              Reserve Your Stay
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <a href="#rooms" class="btn btn-outline"> Explore Rooms </a>
+          </div>
+        </div>
+
+        <!-- FLOATING STATS -->
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>25+</strong>
+            <span>Years Experience</span>
+          </div>
+
+          <div class="hero-stat">
+            <strong>120</strong>
+            <span>Luxury Rooms</span>
+          </div>
+
+          <div class="hero-stat">
+            <strong>4.9</strong>
+            <span>Guest Rating</span>
+          </div>
+        </div>
+
+        <a href="#booking" class="scroll-down">
+          <span>Scroll to explore</span>
+          <i class="fa-solid fa-arrow-down"></i>
+        </a>
+      </section>
+
+      <!-- ================= QUICK BOOKING ================= -->
+
+      <section class="booking-bar-section" id="booking">
+        <div class="container">
+          <form class="booking-bar" id="bookingForm">
+            <div class="booking-field">
+              <i class="fa-regular fa-calendar"></i>
+
+              <div>
+                <label>Check In</label>
+                <input type="date" id="checkIn" required />
+              </div>
+            </div>
+
+            <div class="booking-field">
+              <i class="fa-regular fa-calendar"></i>
+
+              <div>
+                <label>Check Out</label>
+                <input type="date" id="checkOut" required />
+              </div>
+            </div>
+
+            <div class="booking-field">
+              <i class="fa-solid fa-bed"></i>
+
+              <div>
+                <label>Room</label>
+
+                <select id="roomType">
+                  <option value="all">Any Room</option>
+
+                  <option value="deluxe">Deluxe Room</option>
+
+                  <option value="suite">Sunshine Suite</option>
+
+                  <option value="presidential">Presidential Suite</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="booking-field">
+              <i class="fa-solid fa-user-group"></i>
+
+              <div>
+                <label>Guests</label>
+
+                <select id="guests">
+                  <option value="1">1 Guest</option>
+
+                  <option value="2" selected>2 Guests</option>
+
+                  <option value="3">3 Guests</option>
+
+                  <option value="4">4 Guests</option>
+
+                  <option value="5">5+ Guests</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="booking-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              Check Availability
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ================= INTRO ================= -->
+
+      <section class="intro section-padding" id="about">
+        <div class="container intro-grid">
+          <div class="intro-images reveal">
+            <div class="image-main">
+              <img
+                src="assets/images/imgi_11_photo-1566073771259-6a8506099945.jpg"
+                alt="Sunshine Hotel exterior"
+              />
+            </div>
+
+            <div class="image-small">
+              <img
+                src="assets/images/imgi_2_photo-1582719478250-c89cae4dc85b.jpg"
+                alt="Luxury hotel room"
+              />
+            </div>
+
+            <div class="experience-badge">
+              <strong>25</strong>
+              <span>Years of<br />Excellence</span>
+            </div>
+          </div>
+
+          <div class="intro-content reveal">
+            <span class="section-label"> DISCOVER SUNSHINE </span>
+
+            <h2>
+              More Than a Hotel,
+              <span>A Place to Belong.</span>
+            </h2>
+
+            <p>
+              At Sunshine Hotel, we believe luxury is more than beautiful
+              spaces. It is the feeling of being welcomed, cared for and
+              completely at ease.
+            </p>
+
+            <p>
+              From the moment you arrive, our dedicated team creates an
+              experience where comfort meets elegance and every detail has been
+              thoughtfully considered.
+            </p>
+
+            <div class="intro-features">
+              <div>
+                <i class="fa-solid fa-star"></i>
+                <span>World-Class Hospitality</span>
+              </div>
+
+              <div>
+                <i class="fa-solid fa-leaf"></i>
+                <span>Peaceful Environment</span>
+              </div>
+
+              <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Prime Location</span>
+              </div>
+
+              <div>
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Safe & Secure</span>
+              </div>
+            </div>
+
+            <a href="#services" class="text-link">
+              Discover our story
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ROOMS ================= -->
+
+      <section class="rooms section-padding" id="rooms">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="section-label"> OUR ACCOMMODATION </span>
+
+            <h2>
+              Rooms Designed
+              <span>For Your Comfort</span>
+            </h2>
+
+            <p>
+              Wake up refreshed in spaces where contemporary elegance meets
+              timeless comfort.
+            </p>
+          </div>
+
+          <div class="room-filters reveal">
+            <button class="filter-btn active" data-filter="all">
+              All Rooms
+            </button>
+
+            <button class="filter-btn" data-filter="deluxe">Deluxe</button>
+
+            <button class="filter-btn" data-filter="suite">Suites</button>
+
+            <button class="filter-btn" data-filter="family">Family</button>
+          </div>
+
+          <div class="rooms-grid">
+            <!-- ROOM 1 -->
+
+            <article class="room-card reveal" data-category="deluxe">
+              <div class="room-image">
+                <img
+                  src="assets/images/imgi_3_photo-1618773928121-c32242e63f39.jpg"
+                  alt="Deluxe room"
+                />
+
+                <span class="room-tag"> MOST POPULAR </span>
+
+                <button class="room-heart" aria-label="Favorite">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="room-content">
+                <div class="room-title-row">
+                  <div>
+                    <span class="room-type"> DELUXE ROOM </span>
+
+                    <h3>Sunrise Deluxe</h3>
+                  </div>
+
+                  <div class="room-rating">
+                    <i class="fa-solid fa-star"></i>
+                    4.9
+                  </div>
+                </div>
+
+                <p>
+                  Elegant interiors, premium bedding and panoramic city views
+                  for an unforgettable stay.
+                </p>
+
+                <div class="room-details">
+                  <span>
+                    <i class="fa-solid fa-user"></i>
+                    2 Guests
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-maximize"></i>
+                    38 m²
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-bed"></i>
+                    King Bed
+                  </span>
+                </div>
+
+                <div class="room-bottom">
+                  <div class="price">
+                    <strong>$189</strong>
+                    <span>/ night</span>
+                  </div>
+
+                  <button class="room-book open-booking">
+                    Book Room
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- ROOM 2 -->
+
+            <article class="room-card reveal" data-category="suite">
+              <div class="room-image">
+                <img
+                  src="assets/images/imgi_4_photo-1590490360182-c33d57733427.jpg"
+                  alt="Sunshine suite"
+                />
+
+                <span class="room-tag"> LUXURY CHOICE </span>
+
+                <button class="room-heart" aria-label="Favorite">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="room-content">
+                <div class="room-title-row">
+                  <div>
+                    <span class="room-type"> SIGNATURE SUITE </span>
+
+                    <h3>Sunshine Suite</h3>
+                  </div>
+
+                  <div class="room-rating">
+                    <i class="fa-solid fa-star"></i>
+                    5.0
+                  </div>
+                </div>
+
+                <p>
+                  A spacious sanctuary featuring a private lounge, luxurious
+                  bathroom and breathtaking views.
+                </p>
+
+                <div class="room-details">
+                  <span>
+                    <i class="fa-solid fa-user"></i>
+                    3 Guests
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-maximize"></i>
+                    65 m²
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-bed"></i>
+                    King Bed
+                  </span>
+                </div>
+
+                <div class="room-bottom">
+                  <div class="price">
+                    <strong>$329</strong>
+                    <span>/ night</span>
+                  </div>
+
+                  <button class="room-book open-booking">
+                    Book Room
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- ROOM 3 -->
+
+            <article class="room-card reveal" data-category="family">
+              <div class="room-image">
+                <img
+                  src="assets/images/imgi_5_photo-1591088398332-8a7791972843.jpg"
+                  alt="Family hotel room"
+                />
+
+                <span class="room-tag"> FAMILY </span>
+
+                <button class="room-heart" aria-label="Favorite">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="room-content">
+                <div class="room-title-row">
+                  <div>
+                    <span class="room-type"> FAMILY ROOM </span>
+
+                    <h3>Garden Residence</h3>
+                  </div>
+
+                  <div class="room-rating">
+                    <i class="fa-solid fa-star"></i>
+                    4.8
+                  </div>
+                </div>
+
+                <p>
+                  Spacious family accommodation with connecting spaces and a
+                  relaxing garden atmosphere.
+                </p>
+
+                <div class="room-details">
+                  <span>
+                    <i class="fa-solid fa-user"></i>
+                    5 Guests
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-maximize"></i>
+                    78 m²
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-bed"></i>
+                    2 Beds
+                  </span>
+                </div>
+
+                <div class="room-bottom">
+                  <div class="price">
+                    <strong>$279</strong>
+                    <span>/ night</span>
+                  </div>
+
+                  <button class="room-book open-booking">
+                    Book Room
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- ROOM 4 -->
+
+            <article class="room-card reveal" data-category="suite">
+              <div class="room-image">
+                <img
+                  src="assets/images/imgi_6_photo-1600607687939-ce8a6c25118c.jpg"
+                  alt="Presidential suite"
+                />
+
+                <span class="room-tag"> PREMIUM </span>
+
+                <button class="room-heart" aria-label="Favorite">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="room-content">
+                <div class="room-title-row">
+                  <div>
+                    <span class="room-type"> PRESIDENTIAL </span>
+
+                    <h3>Royal Sunshine</h3>
+                  </div>
+
+                  <div class="room-rating">
+                    <i class="fa-solid fa-star"></i>
+                    5.0
+                  </div>
+                </div>
+
+                <p>
+                  Our finest accommodation with expansive living areas, private
+                  dining and exclusive services.
+                </p>
+
+                <div class="room-details">
+                  <span>
+                    <i class="fa-solid fa-user"></i>
+                    4 Guests
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-maximize"></i>
+                    120 m²
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-bed"></i>
+                    2 King Beds
+                  </span>
+                </div>
+
+                <div class="room-bottom">
+                  <div class="price">
+                    <strong>$599</strong>
+                    <span>/ night</span>
+                  </div>
+
+                  <button class="room-book open-booking">
+                    Book Room
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="center-button">
+            <button class="btn btn-dark open-booking">
+              View & Reserve Your Room
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SERVICES ================= -->
+
+      <section class="services section-padding" id="services">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="section-label"> HOTEL SERVICES </span>
+
+            <h2>
+              Everything You Need,
+              <span>All in One Place</span>
+            </h2>
+
+            <p>Designed to make every moment of your stay effortless.</p>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card reveal">
+              <div class="service-icon">
+                <i class="fa-solid fa-spa"></i>
+              </div>
+
+              <h3>Luxury Spa</h3>
+
+              <p>
+                Relax, recharge and restore yourself with our premium wellness
+                treatments.
+              </p>
+
+              <a href="#contact">
+                Explore Service
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-icon">
+                <i class="fa-solid fa-utensils"></i>
+              </div>
+
+              <h3>Fine Dining</h3>
+
+              <p>
+                Discover carefully crafted dishes prepared by our award-winning
+                culinary team.
+              </p>
+
+              <a href="#restaurant">
+                Explore Restaurant
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-icon">
+                <i class="fa-solid fa-person-swimming"></i>
+              </div>
+
+              <h3>Infinity Pool</h3>
+
+              <p>
+                Enjoy peaceful afternoons beside our stunning infinity pool
+                overlooking the horizon.
+              </p>
+
+              <a href="#gallery">
+                View Gallery
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-icon">
+                <i class="fa-solid fa-dumbbell"></i>
+              </div>
+
+              <h3>Fitness Center</h3>
+
+              <p>
+                Stay active with modern equipment and a complete wellness
+                environment.
+              </p>
+
+              <a href="#contact">
+                Learn More
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-icon">
+                <i class="fa-solid fa-car"></i>
+              </div>
+
+              <h3>Airport Transfer</h3>
+
+              <p>
+                Travel comfortably with our private airport transfer and
+                chauffeur services.
+              </p>
+
+              <a href="#contact">
+                Request Transfer
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-icon">
+                <i class="fa-solid fa-concierge-bell"></i>
+              </div>
+
+              <h3>24/7 Concierge</h3>
+
+              <p>
+                Our concierge team is always ready to make your stay
+                extraordinary.
+              </p>
+
+              <a href="#contact">
+                Contact Concierge
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= EXPERIENCE BANNER ================= -->
+
+      <section class="experience-section">
+        <div class="experience-overlay"></div>
+
+        <div class="container experience-content reveal">
+          <span class="section-label light"> THE SUNSHINE EXPERIENCE </span>
+
+          <h2>
+            Let the Sunshine
+            <span>Find You.</span>
+          </h2>
+
+          <p>
+            A beautiful escape. A peaceful mind. A stay you will remember
+            forever.
+          </p>
+
+          <button class="btn btn-primary open-booking">
+            Start Your Journey
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= GALLERY ================= -->
+
+      <section class="gallery section-padding" id="gallery">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="section-label"> VISUAL JOURNEY </span>
+
+            <h2>
+              A Glimpse of
+              <span>Sunshine</span>
+            </h2>
+
+            <p>Explore the spaces, experiences and moments waiting for you.</p>
+          </div>
+
+          <div class="gallery-grid">
+            <button
+              class="gallery-item gallery-large reveal"
+              data-image="assets/images/imgi_7_photo-1564501049412-61c2a3083791.jpg"
+            >
+              <img
+                src="assets/images/imgi_7_photo-1564501049412-61c2a3083791.jpg"
+                alt="Luxury hotel pool"
+              />
+
+              <span class="gallery-overlay">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item reveal"
+              data-image="assets/images/imgi_8_photo-1600607687920-4e2a09cf159d.jpg"
+            >
+              <img
+                src="assets/images/imgi_8_photo-1600607687920-4e2a09cf159d.jpg"
+                alt="Hotel interior"
+              />
+
+              <span class="gallery-overlay">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item reveal"
+              data-image="assets/images/imgi_9_photo-1517248135467-4c7edcad34c4.jpg"
+            >
+              <img
+                src="assets/images/imgi_9_photo-1517248135467-4c7edcad34c4.jpg"
+                alt="Fine dining restaurant"
+              />
+
+              <span class="gallery-overlay">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item reveal"
+              data-image="assets/images/imgi_10_photo-1540555700478-4be289fbecef.jpg"
+            >
+              <img
+                src="assets/images/imgi_10_photo-1540555700478-4be289fbecef.jpg"
+                alt="Luxury spa"
+              />
+
+              <span class="gallery-overlay">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item reveal"
+              data-image="assets/images/imgi_17_photo-1566073771259-6a8506099945.jpg"
+            >
+              <img
+                src="assets/images/imgi_17_photo-1566073771259-6a8506099945.jpg"
+                alt="Hotel exterior"
+              />
+
+              <span class="gallery-overlay">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= RESTAURANT ================= -->
+
+      <section class="restaurant section-padding" id="restaurant">
+        <div class="container restaurant-grid">
+          <div class="restaurant-content reveal">
+            <span class="section-label"> SUNSHINE RESTAURANT </span>
+
+            <h2>
+              Taste the
+              <span>Extraordinary.</span>
+            </h2>
+
+            <p>
+              From sunrise breakfasts to intimate dinners, our restaurant
+              celebrates fresh ingredients, thoughtful preparation and
+              unforgettable flavors.
+            </p>
+
+            <div class="restaurant-info">
+              <div>
+                <i class="fa-regular fa-clock"></i>
+
+                <span>
+                  <strong>Breakfast</strong>
+                  6:30 AM – 10:30 AM
+                </span>
+              </div>
+
+              <div>
+                <i class="fa-solid fa-utensils"></i>
+
+                <span>
+                  <strong>Lunch & Dinner</strong>
+                  12:00 PM – 11:00 PM
+                </span>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn btn-dark">
+              Reserve a Table
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="restaurant-image reveal">
+            <img
+              src="assets/images/imgi_12_photo-1515003197210-e0cd71810b5f.jpg"
+              alt="Sunshine restaurant dining"
+            />
+
+            <div class="restaurant-floating-card">
+              <div class="restaurant-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <strong>Exceptional Dining</strong>
+
+              <span>Chef's Table Experience</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TESTIMONIALS ================= -->
+
+      <section class="testimonials section-padding">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="section-label"> GUEST STORIES </span>
+
+            <h2>
+              Loved by Our
+              <span>Guests</span>
+            </h2>
+          </div>
+
+          <div class="testimonial-slider reveal">
+            <button class="slider-btn previous" id="prevTestimonial">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <div class="testimonial-track" id="testimonialTrack">
+              <article class="testimonial active">
+                <div class="quote-icon">
+                  <i class="fa-solid fa-quote-left"></i>
+                </div>
+
+                <p>
+                  “From the first moment we arrived, everything felt effortless.
+                  The room was beautiful, the staff were exceptional and the
+                  restaurant was simply unforgettable.”
+                </p>
+
+                <div class="guest">
+                  <div class="guest-avatar">AM</div>
+
+                  <div>
+                    <strong> Amelia Morgan </strong>
+
+                    <span> London, United Kingdom </span>
+                  </div>
+                </div>
+
+                <div class="testimonial-stars">★★★★★</div>
+              </article>
+
+              <article class="testimonial">
+                <div class="quote-icon">
+                  <i class="fa-solid fa-quote-left"></i>
+                </div>
+
+                <p>
+                  “Sunshine Hotel exceeded every expectation. The attention to
+                  detail was incredible and the atmosphere made it impossible
+                  not to relax.”
+                </p>
+
+                <div class="guest">
+                  <div class="guest-avatar">DK</div>
+
+                  <div>
+                    <strong> Daniel Kim </strong>
+
+                    <span> Seoul, South Korea </span>
+                  </div>
+                </div>
+
+                <div class="testimonial-stars">★★★★★</div>
+              </article>
+
+              <article class="testimonial">
+                <div class="quote-icon">
+                  <i class="fa-solid fa-quote-left"></i>
+                </div>
+
+                <p>
+                  “The perfect combination of luxury and warmth. We stayed for
+                  three nights and honestly wished we could stay forever.”
+                </p>
+
+                <div class="guest">
+                  <div class="guest-avatar">SL</div>
+
+                  <div>
+                    <strong> Sophia Laurent </strong>
+
+                    <span> Paris, France </span>
+                  </div>
+                </div>
+
+                <div class="testimonial-stars">★★★★★</div>
+              </article>
+            </div>
+
+            <button class="slider-btn next" id="nextTestimonial">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="testimonial-dots" id="testimonialDots">
+            <button class="dot active"></button>
+            <button class="dot"></button>
+            <button class="dot"></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= OFFERS ================= -->
+
+      <section class="offers section-padding">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="section-label"> SPECIAL OFFERS </span>
+
+            <h2>
+              Make Your Stay
+              <span>Even More Special</span>
+            </h2>
+          </div>
+
+          <div class="offers-grid">
+            <article class="offer-card reveal">
+              <div class="offer-image">
+                <img
+                  src="assets/images/imgi_13_photo-1544161515-4ab6ce6db874.jpg"
+                  alt="Spa treatment"
+                />
+
+                <span> -20% </span>
+              </div>
+
+              <div class="offer-content">
+                <small> WELLNESS ESCAPE </small>
+
+                <h3>Relax & Rejuvenate</h3>
+
+                <p>
+                  Enjoy two nights, daily breakfast and a complimentary
+                  60-minute spa treatment.
+                </p>
+
+                <button class="offer-link open-booking">
+                  Book Offer
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </article>
+
+            <article class="offer-card reveal">
+              <div class="offer-image">
+                <img
+                  src="assets/images/imgi_14_photo-1517248135467-4c7edcad34c4.jpg"
+                  alt="Restaurant dining"
+                />
+
+                <span> NEW </span>
+              </div>
+
+              <div class="offer-content">
+                <small> ROMANTIC GETAWAY </small>
+
+                <h3>Dinner Under the Stars</h3>
+
+                <p>
+                  A romantic suite, private dinner and breakfast served in the
+                  comfort of your room.
+                </p>
+
+                <button class="offer-link open-booking">
+                  Book Offer
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FAQ ================= -->
+
+      <section class="faq section-padding">
+        <div class="container faq-grid">
+          <div class="faq-intro reveal">
+            <span class="section-label"> QUESTIONS </span>
+
+            <h2>
+              Everything You
+              <span>Need to Know</span>
+            </h2>
+
+            <p>
+              Find answers to some of the most common questions about staying at
+              Sunshine Hotel.
+            </p>
+
+            <button class="btn btn-dark open-booking">
+              Ask & Book
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="faq-list reveal">
+            <div class="faq-item active">
+              <button class="faq-question">
+                <span> What time is check-in and check-out? </span>
+
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <div class="faq-answer">
+                <p>
+                  Check-in begins at 3:00 PM and check-out is until 12:00 PM.
+                  Early check-in and late check-out may be available upon
+                  request.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span> Does the hotel offer airport transfers? </span>
+
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <div class="faq-answer">
+                <p>
+                  Yes. Our concierge can arrange private airport transportation.
+                  Please contact us before arrival to arrange your transfer.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span> Is breakfast included? </span>
+
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <div class="faq-answer">
+                <p>
+                  Breakfast is included with selected room packages. You can
+                  also add breakfast to your reservation at any time.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span> Does Sunshine Hotel have free Wi-Fi? </span>
+
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <div class="faq-answer">
+                <p>
+                  Complimentary high-speed Wi-Fi is available throughout the
+                  hotel, including guest rooms, restaurants and common areas.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span> Can I cancel my reservation? </span>
+
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <div class="faq-answer">
+                <p>
+                  Cancellation policies vary by room and rate. The exact policy
+                  will be displayed before you confirm your reservation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= NEWSLETTER ================= -->
+
+      <section class="newsletter">
+        <div class="container newsletter-inner">
+          <div class="newsletter-content">
+            <span class="section-label light"> STAY CONNECTED </span>
+
+            <h2>Sunshine in Your Inbox.</h2>
+
+            <p>
+              Subscribe for exclusive offers, travel inspiration and special
+              experiences.
+            </p>
+          </div>
+
+          <form class="newsletter-form" id="newsletterForm">
+            <input
+              type="email"
+              id="newsletterEmail"
+              placeholder="Your email address"
+              required
+            />
+
+            <button type="submit">
+              Subscribe
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ================= CONTACT ================= -->
+
+      <section class="contact section-padding" id="contact">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="section-label"> GET IN TOUCH </span>
+
+            <h2>
+              We Would Love
+              <span>To Hear From You</span>
+            </h2>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info reveal">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div>
+                  <span>OUR LOCATION</span>
+
+                  <strong> 25 Sunshine Avenue, Paradise City </strong>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <div>
+                  <span>CALL US</span>
+
+                  <strong> +1 800 555 2026 </strong>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fa-regular fa-envelope"></i>
+                </div>
+
+                <div>
+                  <span>EMAIL US</span>
+
+                  <strong> hello@sunshinehotel.com </strong>
+                </div>
+              </div>
+
+              <div class="contact-socials">
+                <a href="#" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="Twitter">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="#" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <form class="contact-form reveal" id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name"> Your Name </label>
+
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="email"> Email Address </label>
+
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="john@example.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject"> Subject </label>
+
+                <input
+                  type="text"
+                  id="subject"
+                  placeholder="How can we help?"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message"> Message </label>
+
+                <textarea
+                  id="message"
+                  rows="6"
+                  placeholder="Write your message..."
+                  required
+                ></textarea>
+              </div>
+
+              <button class="btn btn-dark" type="submit">
+                Send Message
+
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+      <div class="container footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="logo footer-logo">
+            <span class="logo-sun">
+              <i class="fa-solid fa-sun"></i>
+            </span>
+
+            <span>
+              SUNSHINE
+              <small>HOTEL & RESORT</small>
+            </span>
+          </a>
+
+          <p>
+            A destination created for beautiful stays, unforgettable experiences
+            and moments that last.
+          </p>
+
+          <div class="footer-rating">
+            <div>
+              <strong>4.9</strong>
+              <span>/ 5</span>
+            </div>
+
+            <div>
+              <span>★★★★★</span>
+              <small>2,500+ guest reviews</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Explore</h3>
+
+          <a href="#home">Home</a>
+          <a href="#rooms">Rooms & Suites</a>
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#restaurant">Restaurant</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Information</h3>
+
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+          <a href="#faq">FAQ</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+
+        <div class="footer-column footer-contact">
+          <h3>Contact</h3>
+
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+            25 Sunshine Avenue, Paradise City
+          </p>
+
+          <p>
+            <i class="fa-solid fa-phone"></i>
+            +1 800 555 2026
+          </p>
+
+          <p>
+            <i class="fa-regular fa-envelope"></i>
+            hello@sunshinehotel.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© 2026 Sunshine Hotel & Resort. All rights reserved.</p>
+
+          <p>
+            Designed with
+            <i class="fa-solid fa-heart"></i>
+            for unforgettable stays.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= BACK TO TOP ================= -->
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ================= GALLERY LIGHTBOX ================= -->
+
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <img id="lightboxImage" src="" alt="Gallery image" />
+    </div>
+
+    <!-- ================= BOOKING MODAL ================= -->
+
+    <div class="modal" id="bookingModal">
+      <div class="booking-modal">
+        <button class="modal-close" id="modalClose">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-header">
+          <span class="section-label"> RESERVATION </span>
+
+          <h2>
+            Reserve Your
+            <span>Sunshine Stay</span>
+          </h2>
+
+          <p>
+            Complete the form below and our team will contact you to confirm
+            your reservation.
+          </p>
+        </div>
+
+        <form id="reservationForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label> First Name </label>
+
+              <input type="text" id="reservationName" required />
+            </div>
+
+            <div class="form-group">
+              <label> Email </label>
+
+              <input type="email" id="reservationEmail" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label> Check In </label>
+
+              <input type="date" id="reservationCheckIn" required />
+            </div>
+
+            <div class="form-group">
+              <label> Check Out </label>
+
+              <input type="date" id="reservationCheckOut" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label> Room Type </label>
+
+              <select id="reservationRoom">
+                <option>Deluxe Room</option>
+
+                <option>Sunshine Suite</option>
+
+                <option>Garden Residence</option>
+
+                <option>Royal Sunshine</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label> Guests </label>
+
+              <select id="reservationGuests">
+                <option>1 Guest</option>
+                <option selected>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+                <option>5+ Guests</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label> Special Request </label>
+
+            <textarea
+              id="reservationMessage"
+              rows="4"
+              placeholder="Any special requests?"
+            ></textarea>
+          </div>
+
+          <button class="btn btn-dark modal-submit" type="submit">
+            Request Reservation
+
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ================= SUCCESS MESSAGE ================= -->
+
+    <div class="toast" id="toast">
+      <div class="toast-icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <div>
+        <strong id="toastTitle"> Success </strong>
+
+        <p id="toastMessage">Your request has been received.</p>
+      </div>
+
+      <button id="toastClose">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <script src="SunShine.js"></script>
+  </body>
+</html>

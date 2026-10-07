@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Contact | NOVA</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NOVA — Modern essentials designed for everyday."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="NOVA.html">NO<span>V</span>A</a>
+        <nav class="main-nav">
+          <a class="" href="NOVA.html">Home</a
+          ><a class="" href="shop.html">Shop</a
+          ><a class="" href="NOVA.html#categories">Categories</a
+          ><a class="" href="about.html">About</a
+          ><a class="active" href="contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a class="header-icon" href="shop.html" aria-label="Search"
+            ><i class="bi bi-search"></i></a
+          ><a
+            class="header-icon wishlist-link"
+            href="wishlist.html"
+            aria-label="Wishlist"
+            ><i class="bi bi-heart"></i
+            ><span class="count-badge wishlist-count">0</span></a
+          ><a class="header-icon" href="cart.html" aria-label="Cart"
+            ><i class="bi bi-bag"></i
+            ><span class="count-badge cart-count">0</span></a
+          ><button class="menu-toggle" data-menu aria-label="Open navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <div class="breadcrumb">
+            <a href="NOVA.html">Home</a><span>/</span><span>Contact</span>
+          </div>
+          <h1>Let's talk.</h1>
+          <p>
+            Questions, feedback or just want to say hello? Send us a message.
+          </p>
+        </div>
+      </section>
+      <section class="container contact-layout">
+        <div class="contact-info">
+          <span class="eyebrow">Contact NOVA</span>
+          <h2>We're here to help.</h2>
+          <p>
+            For this portfolio project, the contact form is frontend-only, with
+            validation and a simulated success state.
+          </p>
+          <div class="contact-list">
+            <div>
+              <i class="bi bi-envelope"></i
+              ><span>hello@nova-store.example</span>
+            </div>
+            <div>
+              <i class="bi bi-clock"></i><span>Mon–Fri · 9:00–18:00</span>
+            </div>
+            <div>
+              <i class="bi bi-geo-alt"></i><span>Everywhere / Online</span>
+            </div>
+          </div>
+        </div>
+        <form id="contact-form">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="name">Name</label
+              ><input class="field" id="name" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label
+              ><input class="field" id="email" type="email" required />
+            </div>
+            <div class="form-field full">
+              <label for="subject">Subject</label
+              ><input class="field" id="subject" required />
+            </div>
+            <div class="form-field full">
+              <label for="message">Message</label
+              ><textarea class="field" id="message" required></textarea>
+            </div>
+            <div class="form-field full">
+              <button class="btn btn-dark" type="submit">
+                Send Message <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="logo" href="NOVA.html">NO<span>V</span>A</a>
+            <p>
+              Modern essentials. Designed for everyday. Thoughtful pieces, clean
+              silhouettes and an effortless point of view.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h3>Shop</h3>
+            <a href="shop.html?category=Clothing">Clothing</a
+            ><a href="shop.html?category=Shoes">Shoes</a
+            ><a href="shop.html?category=Accessories">Accessories</a
+            ><a href="shop.html?category=Bags">Bags</a>
+          </div>
+          <div class="footer-col">
+            <h3>Support</h3>
+            <a href="contact.html">Contact</a><a href="about.html">About NOVA</a
+            ><a href="cart.html">Cart</a><a href="wishlist.html">Wishlist</a>
+          </div>
+          <div class="footer-col">
+            <h3>Follow</h3>
+            <a href="#">Instagram</a><a href="#">Pinterest</a
+            ><a href="#">Facebook</a><a href="#">TikTok</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 NOVA. Portfolio project.</span
+          ><span>Modern essentials. Designed for everyday.</span>
+        </div>
+      </div>
+    </footer>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
