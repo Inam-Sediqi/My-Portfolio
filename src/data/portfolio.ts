@@ -1,5 +1,4 @@
 // All editable content lives here. Replace links/images with your own.
-import cvFile from "@/assets/files/Inamullah-Sediqi-CV.pdf";
 import htmlIcon from "@/assets/icons/html-5.svg";
 import cssIcon from "@/assets/icons/css3-original.svg";
 import javascriptIcon from "@/assets/icons/javascript.svg";
@@ -29,7 +28,6 @@ export const profile = {
   // Free key from https://web3forms.com (enter your Gmail, they email you the key).
   // While empty, "Send message" opens the visitor's email app instead.
   web3formsKey: "",
-  cv: cvFile,
   github: "https://github.com/Inam-Sediqi",
 };
 

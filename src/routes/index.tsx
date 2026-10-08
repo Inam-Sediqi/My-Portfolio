@@ -373,11 +373,6 @@ function Hero({ theme }: { theme: Theme }) {
                 View my work
               </a>
             </Magnetic>
-            <Magnetic>
-              <a href={profile.cv} download className="btn-ghost">
-                Download CV
-              </a>
-            </Magnetic>
           </motion.div>
         </motion.div>
         <div className="relative order-1 h-[42svh] min-h-[300px] md:order-2 md:h-[600px]">
