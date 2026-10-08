@@ -1,7 +1,5 @@
-import { ClientOnly, createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import {
-  lazy,
-  Suspense,
   useEffect,
   useRef,
   useState,
@@ -27,11 +25,9 @@ import {
   faqs,
 } from "@/data/portfolio";
 
-const Hero3D = lazy(() => import("@/components/Hero3D"));
-
 const TITLE = "Inam Sediqi — Frontend Developer Portfolio";
 const DESC =
-  "CS student and frontend developer building fast, responsive and accessible websites — with 3D, motion and modern web technology.";
+  "CS student and frontend developer building fast, responsive and accessible websites with modern web technology.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,12 +40,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
-/* Three.js can't read CSS oklch colors, so the 3D scene gets hex per theme */
-const SCENE_COLORS = {
-  dark: { primary: "#f08a5d", accent: "#6fd3d0" },
-  light: { primary: "#e0623a", accent: "#2a9d9a" },
-};
 
 type Theme = "dark" | "light";
 
@@ -98,7 +88,7 @@ function Index() {
       <MovingBackground />
       <Header theme={theme} onToggle={toggle} />
       <main className="relative">
-        <Hero theme={theme} />
+        <Hero />
         <About />
         <Skills />
         <Journey />
@@ -305,12 +295,11 @@ function Header({ theme, onToggle }: { theme: Theme; onToggle: () => void }) {
 
 /* ---------- Sections ---------- */
 
-function Hero({ theme }: { theme: Theme }) {
+function Hero() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 160]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const colors = SCENE_COLORS[theme];
   return (
     <section id="home" ref={ref} className="relative flex min-h-[100svh] items-center pt-24">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-6 px-5 md:grid-cols-2">
@@ -327,28 +316,8 @@ function Hero({ theme }: { theme: Theme }) {
             Available for projects
           </motion.p>
           <h1 className="mt-6 text-5xl font-bold leading-[0.95] sm:text-6xl lg:text-7xl">
-            {["Hi, I'm", "Inam Sediqi."].map((w, wi) => (
-              <span key={w} className="block [perspective:800px]" aria-label={w}>
-                {Array.from(w).map((ch, ci) => (
-                  <motion.span
-                    key={ci}
-                    aria-hidden
-                    className={`inline-block origin-bottom whitespace-pre ${wi === 1 ? "text-primary" : ""}`}
-                    initial={{ rotateX: -95, opacity: 0, y: 30, filter: "blur(8px)" }}
-                    animate={{ rotateX: 0, opacity: 1, y: 0, filter: "blur(0px)" }}
-                    whileHover={{ y: -10, color: "var(--accent)", transition: { duration: 0.15 } }}
-                    transition={{
-                      delay: 0.2 + wi * 0.25 + ci * 0.04,
-                      type: "spring",
-                      stiffness: 180,
-                      damping: 14,
-                    }}
-                  >
-                    {ch}
-                  </motion.span>
-                ))}
-              </span>
-            ))}
+            Hi, I&apos;m
+            <span className="block text-primary">Inam Sediqi.</span>
           </h1>
           <p className="mt-5 h-8 text-xl sm:text-2xl">
             <Typewriter />
@@ -376,11 +345,31 @@ function Hero({ theme }: { theme: Theme }) {
           </motion.div>
         </motion.div>
         <div className="relative order-1 h-[42svh] min-h-[300px] md:order-2 md:h-[600px]">
-          <ClientOnly fallback={<div className="size-full" />}>
-            <Suspense fallback={<div className="size-full" />}>
-              <Hero3D primary={colors.primary} accent={colors.accent} />
-            </Suspense>
-          </ClientOnly>
+          <div
+            aria-hidden="true"
+            className="relative mx-auto grid aspect-square h-full max-h-[min(82vw,34rem)] place-items-center"
+          >
+            <div className="absolute inset-[8%] rounded-full border border-primary/15" />
+            <div className="absolute inset-[17%] rounded-full border border-dashed border-accent/25" />
+            <div className="absolute inset-[25%] rounded-full bg-gradient-to-br from-primary/20 via-accent/10 to-transparent" />
+            <div className="absolute inset-[25%] rounded-full bg-primary/10 blur-3xl" />
+            <div className="glass relative grid size-[42%] place-items-center rounded-[2rem] border-primary/20 shadow-2xl shadow-primary/10">
+              <span className="bg-gradient-to-br from-primary via-primary to-accent bg-clip-text font-display text-7xl font-bold tracking-tight text-transparent sm:text-8xl">
+                IS
+              </span>
+              <span className="absolute bottom-5 h-1 w-10 rounded-full bg-accent/70" />
+            </div>
+            <div className="glass absolute left-[3%] top-[22%] rounded-2xl px-4 py-3 text-sm font-semibold shadow-lg">
+              <span className="mr-2 inline-block size-2 rounded-full bg-whatsapp" />
+              Creative developer
+            </div>
+            <div className="glass absolute bottom-[17%] right-[1%] rounded-2xl px-4 py-3 shadow-lg">
+              <span className="block font-mono text-xs text-accent">{"<build />"}</span>
+              <span className="mt-1 block text-sm font-semibold">Ideas into interfaces</span>
+            </div>
+            <span className="absolute right-[17%] top-[14%] size-3 rounded-full bg-accent shadow-[0_0_24px_var(--accent)]" />
+            <span className="absolute bottom-[24%] left-[14%] size-2 rounded-full bg-primary shadow-[0_0_20px_var(--primary)]" />
+          </div>
         </div>
       </div>
       <a

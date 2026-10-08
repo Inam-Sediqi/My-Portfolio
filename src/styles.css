@@ -199,3 +199,8 @@
 @media (prefers-reduced-motion: reduce) {
   .drift-a, .drift-b, .drift-c, .marquee, .caret, .grid-lines, .text-gradient { animation: none; }
 }
+
+@media (max-width: 640px) {
+  .aurora-blob { filter: blur(48px); }
+  .drift-a, .drift-b, .drift-c, .grid-lines { animation: none; }
+}
