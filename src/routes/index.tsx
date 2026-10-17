@@ -238,10 +238,10 @@ function Header({ theme, onToggle }: { theme: Theme; onToggle: () => void }) {
     return () => io.disconnect();
   }, []);
   return (
-    <header className="fixed inset-x-0 top-3 z-40 px-3">
+    <header className="fixed inset-x-0 top-[max(0.75rem,env(safe-area-inset-top))] z-40 px-3 sm:px-5">
       <nav
         aria-label="Main"
-        className="glass mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-full px-4 py-2 md:flex md:justify-between"
+        className="glass mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-full px-3 py-2 sm:px-4 md:flex md:justify-between"
       >
         <a href="#home" className="truncate font-display text-xl font-bold">
           inam<span className="text-primary">.</span>dev
@@ -267,14 +267,14 @@ function Header({ theme, onToggle }: { theme: Theme; onToggle: () => void }) {
         </div>
         <ul
           id="nav-menu"
-          className={`${open ? "flex" : "hidden"} glass col-span-2 flex-col gap-1 rounded-2xl p-2 md:flex md:flex-row md:border-0 md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-none`}
+          className={`${open ? "flex" : "hidden"} glass col-span-2 max-h-[calc(100dvh-6rem)] flex-col gap-1 overflow-y-auto overscroll-contain rounded-2xl p-2 md:flex md:max-h-none md:flex-row md:overflow-visible md:border-0 md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-none`}
         >
           {nav.map((n) => (
             <li key={n.id} className="relative">
               <a
                 href={`#${n.id}`}
                 onClick={() => setOpen(false)}
-                className={`relative z-10 block rounded-full px-4 py-2 text-sm font-semibold transition-colors ${active === n.id ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                className={`relative z-10 block min-h-11 rounded-full px-3 py-2 text-sm font-semibold transition-colors sm:px-4 md:min-h-0 ${active === n.id ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
               >
                 {n.label}
               </a>
@@ -302,7 +302,7 @@ function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   return (
     <section id="home" ref={ref} className="relative flex min-h-[100svh] items-center pt-24">
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-6 px-5 md:grid-cols-2">
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-4 px-4 sm:gap-6 sm:px-5 md:grid-cols-2">
         <motion.div style={{ y, opacity }} className="relative z-10 order-2 md:order-1">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -315,18 +315,18 @@ function Hero() {
             </span>
             Available for projects
           </motion.p>
-          <h1 className="mt-6 text-5xl font-bold leading-[0.95] sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 text-[clamp(2.5rem,10vw,3.75rem)] font-bold leading-[0.95] sm:text-6xl lg:text-7xl">
             Hi, I&apos;m
             <span className="block text-primary">Inam Sediqi.</span>
           </h1>
-          <p className="mt-5 h-8 text-xl sm:text-2xl">
+          <p className="mt-5 h-8 text-lg sm:text-2xl">
             <Typewriter />
           </p>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
-            className="mt-4 max-w-md text-lg text-pretty text-muted-foreground"
+            className="mt-4 max-w-md text-base text-pretty text-muted-foreground sm:text-lg"
           >
             I craft fast, responsive and accessible websites — turning ideas into interfaces people
             love to use.
@@ -344,7 +344,7 @@ function Hero() {
             </Magnetic>
           </motion.div>
         </motion.div>
-        <div className="relative order-1 h-[42svh] min-h-[300px] md:order-2 md:h-[600px]">
+        <div className="relative order-1 h-[34svh] min-h-[240px] max-h-[380px] md:order-2 md:h-[600px]">
           <div
             aria-hidden="true"
             className="relative mx-auto grid aspect-square h-full max-h-[min(82vw,34rem)] place-items-center"
@@ -417,11 +417,11 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 
 function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24">
+    <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-16 sm:py-24">
       <SectionHead kicker="01 · About" title="Building skills. Creating solutions." />
       <div className="grid gap-5 md:grid-cols-6">
         <motion.div {...fadeUp} className="md:col-span-4">
-          <TiltCard className="h-full space-y-4 p-7 text-lg text-pretty text-muted-foreground sm:p-9">
+          <TiltCard className="h-full space-y-4 p-5 text-base text-pretty text-muted-foreground sm:p-9 sm:text-lg">
             <p>
               I'm <strong className="text-foreground">{profile.name}</strong>, a second-year
               Computer Science student at Kateb University with a strong interest in software
@@ -439,7 +439,7 @@ function About() {
         </motion.div>
         <div className="grid grid-cols-2 gap-5 md:col-span-2 md:grid-cols-1">
           <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
-            <TiltCard className="h-full p-6">
+            <TiltCard className="h-full p-5 sm:p-6">
               <p className="font-display text-5xl font-bold text-gradient">
                 <Counter to={5} />
               </p>
@@ -447,7 +447,7 @@ function About() {
             </TiltCard>
           </motion.div>
           <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-            <TiltCard className="h-full p-6">
+            <TiltCard className="h-full p-5 sm:p-6">
               <p className="font-display text-5xl font-bold text-gradient">
                 <Counter to={7} suffix="+" />
               </p>
@@ -459,7 +459,7 @@ function About() {
             transition={{ ...fadeUp.transition, delay: 0.3 }}
             className="col-span-2 md:col-span-1"
           >
-            <TiltCard className="h-full p-6">
+            <TiltCard className="h-full p-5 sm:p-6">
               <p className="font-mono text-xs uppercase tracking-widest text-accent">
                 IT & Networking
               </p>
@@ -474,7 +474,7 @@ function About() {
 
 function Skills() {
   return (
-    <section id="skills" className="scroll-mt-24 py-24">
+    <section id="skills" className="scroll-mt-24 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-5">
         <SectionHead
           kicker="02 · Toolbox"
@@ -488,7 +488,7 @@ function Skills() {
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: i * 0.06 }}
             >
-              <TiltCard className="group h-full p-5 sm:p-7">
+              <TiltCard className="group h-full p-4 sm:p-7">
                 <div className="grid size-14 place-items-center rounded-2xl bg-secondary [transform:translateZ(40px)]">
                   <img
                     src={s.icon}
@@ -499,7 +499,7 @@ function Skills() {
                     className="size-8 transition-transform duration-500 group-hover:rotate-[360deg]"
                   />
                 </div>
-                <h3 className="mt-5 text-xl font-bold">{s.name}</h3>
+                <h3 className="mt-5 text-lg font-bold sm:text-xl">{s.name}</h3>
                 <p className="mt-2 hidden text-sm text-muted-foreground sm:block">{s.text}</p>
               </TiltCard>
             </motion.li>
@@ -532,7 +532,7 @@ function Skills() {
 
 function Services() {
   return (
-    <section id="services" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24">
+    <section id="services" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-16 sm:py-24">
       <SectionHead
         kicker="03 · Services"
         title="What I can do for you"
@@ -545,7 +545,7 @@ function Services() {
             {...fadeUp}
             transition={{ ...fadeUp.transition, delay: (i % 3) * 0.08 }}
           >
-            <TiltCard className="group flex h-full flex-col p-7">
+            <TiltCard className="group flex h-full flex-col p-5 sm:p-7">
               <span className="font-display text-6xl font-bold text-foreground/10 transition-colors group-hover:text-primary/40">
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -602,9 +602,9 @@ function ProjectCard({ p, i }: { p: (typeof projects)[number]; i: number }) {
               {String(i + 1).padStart(2, "0")} / 05
             </span>
           </a>
-          <div className="p-6 sm:p-8">
+          <div className="p-4 sm:p-8">
             <p className="font-mono text-xs uppercase tracking-widest text-accent">{p.category}</p>
-            <h3 className="mt-2 text-3xl font-bold">{p.title}</h3>
+            <h3 className="mt-2 text-2xl font-bold sm:text-3xl">{p.title}</h3>
             <p className="mt-3 text-pretty text-muted-foreground">{p.text}</p>
             <ul className="mt-5 flex flex-wrap gap-2">
               {[...p.tags, ...p.stack].map((t) => (
@@ -630,7 +630,7 @@ function ProjectCard({ p, i }: { p: (typeof projects)[number]; i: number }) {
 
 function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24">
+    <section id="projects" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-16 sm:py-24">
       <SectionHead
         kicker="04 · Selected work"
         title="Projects built while learning & creating"
@@ -709,19 +709,22 @@ function Contact() {
   }
 
   const field =
-    "peer mt-2 w-full rounded-2xl border bg-input px-4 py-3.5 outline-none transition-all focus:border-primary focus:shadow-[0_0_0_4px_color-mix(in_oklab,var(--primary)_20%,transparent)]";
+    "peer mt-2 w-full rounded-2xl border bg-input px-4 py-3.5 text-base outline-none transition-all focus:border-primary focus:shadow-[0_0_0_4px_color-mix(in_oklab,var(--primary)_20%,transparent)]";
 
   return (
-    <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24">
+    <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-16 sm:py-24">
       <SectionHead
         kicker="05 · Contact"
         title="Let's build something great together."
         text="Have a project, idea or opportunity? Reach me by email or WhatsApp — I'd love to hear from you."
       />
-      <div className="grid gap-6 md:grid-cols-[1fr_1.5fr]">
-        <motion.address {...fadeUp} className="grid content-start gap-4 not-italic">
-          <TiltCard className="p-0">
-            <a href={`mailto:${profile.email}`} className="flex min-w-0 items-center gap-4 p-6">
+      <div className="grid min-w-0 gap-6 md:grid-cols-[1fr_1.5fr]">
+        <motion.address {...fadeUp} className="grid min-w-0 content-start gap-4 not-italic">
+          <TiltCard className="min-w-0 p-0">
+            <a
+              href={`mailto:${profile.email}`}
+              className="flex min-w-0 items-center gap-4 p-4 sm:p-6"
+            >
               <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-primary">
                 <img src={emailIcon} alt="" width={22} height={22} className="size-5" />
               </span>
@@ -733,17 +736,17 @@ function Contact() {
               </span>
             </a>
           </TiltCard>
-          <TiltCard className="p-0">
+          <TiltCard className="min-w-0 p-0">
             <a
               href={`https://wa.me/${profile.whatsapp}`}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-4 p-6"
+              className="flex min-w-0 items-center gap-4 p-4 sm:p-6"
             >
               <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-whatsapp">
                 <img src={whatsappIcon} alt="" width={22} height={22} className="size-5" />
               </span>
-              <span>
+              <span className="min-w-0">
                 <span className="block text-xs uppercase tracking-widest text-muted-foreground">
                   WhatsApp
                 </span>
@@ -757,7 +760,7 @@ function Contact() {
           noValidate
           onSubmit={send}
           onMouseMove={spot}
-          className="glass spotlight grid gap-5 rounded-3xl p-6 sm:p-9"
+          className="glass spotlight grid min-w-0 gap-5 rounded-3xl p-4 sm:p-9"
         >
           <div className="grid gap-5 sm:grid-cols-2">
             <label className="text-sm font-semibold">
@@ -866,7 +869,7 @@ function Footer() {
 
 function Journey() {
   return (
-    <section id="journey" className="mx-auto max-w-4xl scroll-mt-24 px-5 py-24">
+    <section id="journey" className="mx-auto max-w-4xl scroll-mt-24 px-5 py-16 sm:py-24">
       <SectionHead
         kicker="Journey"
         title="From first tag to full-stack"
@@ -887,7 +890,7 @@ function Journey() {
                 <span className="size-2 animate-ping rounded-full bg-primary-foreground" />
               )}
             </span>
-            <TiltCard className="p-6">
+            <TiltCard className="p-4 sm:p-6">
               <p className="font-mono text-xs uppercase tracking-widest text-accent">{j.when}</p>
               <h3 className="mt-1 text-xl font-bold">{j.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{j.text}</p>
@@ -901,7 +904,7 @@ function Journey() {
 
 function Process() {
   return (
-    <section id="process" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24">
+    <section id="process" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-16 sm:py-24">
       <SectionHead kicker="How I work" title="A simple process, a solid result" />
       <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {process.map((p, i) => (
@@ -910,7 +913,7 @@ function Process() {
             {...fadeUp}
             transition={{ ...fadeUp.transition, delay: i * 0.1 }}
           >
-            <TiltCard className="group relative h-full overflow-hidden p-7">
+            <TiltCard className="group relative h-full overflow-hidden p-5 sm:p-7">
               <span className="absolute -right-3 -top-6 font-display text-[7rem] font-bold leading-none text-foreground/5 transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-primary/15">
                 {i + 1}
               </span>
@@ -930,7 +933,7 @@ function Process() {
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="mx-auto max-w-3xl scroll-mt-24 px-5 py-24">
+    <section id="faq" className="mx-auto max-w-3xl scroll-mt-24 px-5 py-16 sm:py-24">
       <SectionHead kicker="FAQ" title="Questions people often ask" />
       <ul className="grid gap-3">
         {faqs.map((f, i) => {

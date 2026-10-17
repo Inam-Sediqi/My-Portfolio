@@ -150,6 +150,7 @@
 @utility glass {
   background: var(--card);
   border: 1px solid var(--border);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
   backdrop-filter: blur(18px) saturate(140%);
   box-shadow: 0 1px 0 0 color-mix(in oklab, var(--foreground) 8%, transparent) inset,
     0 24px 60px -30px color-mix(in oklab, var(--foreground) 35%, transparent);
@@ -203,4 +204,8 @@
 @media (max-width: 640px) {
   .aurora-blob { filter: blur(48px); }
   .drift-a, .drift-b, .drift-c, .grid-lines { animation: none; }
+  .glass {
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    backdrop-filter: blur(10px) saturate(120%);
+  }
 }
