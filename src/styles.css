@@ -201,8 +201,23 @@
   .drift-a, .drift-b, .drift-c, .marquee, .caret, .grid-lines, .text-gradient { animation: none; }
 }
 
+@media (max-width: 768px) {
+  html { scroll-behavior: auto; }
+  .aurora-blob {
+    filter: blur(40px);
+    opacity: 0.8;
+  }
+  .drift-a, .drift-b, .drift-c, .grid-lines, .text-gradient, .marquee, .caret {
+    animation: none !important;
+  }
+  .glass {
+    -webkit-backdrop-filter: blur(12px) saturate(110%);
+    backdrop-filter: blur(12px) saturate(110%);
+  }
+}
+
 @media (max-width: 640px) {
-  .aurora-blob { filter: blur(48px); }
+  .aurora-blob { filter: blur(34px); }
   .drift-a, .drift-b, .drift-c, .grid-lines { animation: none; }
   .glass {
     -webkit-backdrop-filter: blur(10px) saturate(120%);

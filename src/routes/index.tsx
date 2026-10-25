@@ -7,7 +7,7 @@ import {
   type MouseEvent,
   type ReactNode,
 } from "react";
-import { motion, useScroll, useSpring, useTransform } from "motion/react";
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
 import { z } from "zod";
 import emailIcon from "@/assets/icons/email.svg";
 import whatsappIcon from "@/assets/icons/whatsapp.svg";
@@ -70,6 +70,7 @@ const fadeUp = {
 
 function Index() {
   const { theme, toggle } = useTheme();
+  const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 25 });
   return (
@@ -85,7 +86,7 @@ function Index() {
         style={{ scaleX: progress }}
         className="fixed inset-x-0 top-0 z-50 h-1 origin-left bg-gradient-to-r from-primary to-accent"
       />
-      <MovingBackground />
+      <MovingBackground reducedMotion={prefersReducedMotion} />
       <Header theme={theme} onToggle={toggle} />
       <main className="relative">
         <Hero />
@@ -104,13 +105,13 @@ function Index() {
   );
 }
 
-function MovingBackground() {
+function MovingBackground({ reducedMotion }: { reducedMotion: boolean }) {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      <div className="aurora-blob drift-a -left-[10vw] -top-[10vh] size-[55vmax] bg-blob-1" />
-      <div className="aurora-blob drift-b -right-[15vw] top-[20vh] size-[50vmax] bg-blob-2" />
-      <div className="aurora-blob drift-c bottom-[-20vh] left-[20vw] size-[45vmax] bg-blob-3" />
-      <div className="grid-lines absolute inset-0" />
+      <div className={`aurora-blob ${reducedMotion ? "" : "drift-a"} -left-[10vw] -top-[10vh] size-[55vmax] bg-blob-1`} />
+      <div className={`aurora-blob ${reducedMotion ? "" : "drift-b"} -right-[15vw] top-[20vh] size-[50vmax] bg-blob-2`} />
+      <div className={`aurora-blob ${reducedMotion ? "" : "drift-c"} bottom-[-20vh] left-[20vw] size-[45vmax] bg-blob-3`} />
+      <div className={`grid-lines absolute inset-0 ${reducedMotion ? "!animate-none" : ""}`} />
       <div className="noise absolute inset-0" />
     </div>
   );
@@ -126,10 +127,11 @@ function spot(e: MouseEvent<HTMLElement>) {
 
 function TiltCard({ children, className = "" }: { children: ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useReducedMotion();
   const onMove = (e: MouseEvent<HTMLDivElement>) => {
     spot(e);
     const el = ref.current;
-    if (!el || window.matchMedia("(hover: none)").matches) return;
+    if (!el || prefersReducedMotion || window.matchMedia("(hover: none)").matches) return;
     const r = el.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width - 0.5;
     const y = (e.clientY - r.top) / r.height - 0.5;
@@ -152,6 +154,10 @@ function TiltCard({ children, className = "" }: { children: ReactNode; className
 
 function Magnetic({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLSpanElement>(null);
+  const prefersReducedMotion = useReducedMotion();
+  if (prefersReducedMotion) {
+    return <span className="inline-block">{children}</span>;
+  }
   return (
     <span
       ref={ref}
